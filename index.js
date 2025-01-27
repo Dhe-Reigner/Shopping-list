@@ -5,8 +5,13 @@ const list = document.getElementById('list')
 const shoppingList = []
 
 addItemBtn.addEventListener('click', function(){
-    shoppingList.push(itemInput.value)
-    render()
+    if(shoppingList.includes(itemInput.value)){
+        alert('Item already exists in the list.')
+        return
+    }else{
+        shoppingList.push(itemInput.value)
+        render()
+    }
     itemInput.value = ''
 })
 
